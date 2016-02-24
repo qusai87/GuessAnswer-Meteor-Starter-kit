@@ -1,0 +1,14 @@
+<template name="home">
+  <div class="container">
+    <header>
+      <h1>Welcome To Ask And Answers Game!</h1>
+    </header>
+	{{#if currentUser}}
+	    <ul>
+		    <li><a href="{{pathFor route='ask'}}">Ask New Question</a></li>
+		</ul>
+	{{else}}
+		<p>please login to start!</p>
+	{{/if}}
+  </div> 
+</template>

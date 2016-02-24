@@ -1,0 +1,17 @@
+<template name="main">
+    <h1>Ask And Answer!</h1>
+    <ul>
+	    <li><a href="{{pathFor route='home'}}">Home</a></li>
+	    {{#if currentUser}}
+	        <li><a href="#" class="logout">Logout</a></li>
+	        <li><a href="{{pathFor route='questions'}}">questions</a></li>
+	    {{else}}
+	    <li><a href="{{pathFor route='register'}}">Register</a></li>
+	    <li><a href="{{pathFor route='login'}}">Login</a></li>
+	    {{/if}}
+	</ul>
+
+    {{> yield}}
+    <hr />
+    <p>Copyright &copy; Qusai Tabbal, 2016.</p>
+</template>

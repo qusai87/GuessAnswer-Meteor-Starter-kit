@@ -1,0 +1,29 @@
+<template name="answers">
+  <div class="container">
+    <header>
+      <h1>Answers Question : </h1>
+      <h2>{{ title }} </h2>
+      <p>{{ content }} </p>
+
+      <ul>
+        {{#each Answers}}
+          {{> answer}}
+        {{/each}}
+      </ul>
+
+
+      <form class="new-answer">
+        <input type="text" name="content" placeholder="Type to add new answer" />
+        <input type="submit" value="Send"/>
+      </form>
+    </header>
+  </div>
+
+</template>
+
+<template name="answer">
+  <li>
+    <p class="content">{{content}}</p>
+    <button class="delete">&times;</button>
+  </li>
+</template>
