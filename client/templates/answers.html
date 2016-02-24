@@ -11,11 +11,12 @@
         {{/each}}
       </ul>
 
-
-      <form class="new-answer">
-        <input type="text" name="content" placeholder="Type to add new answer" />
-        <input type="submit" value="Send"/>
-      </form>
+      {{#if currentUser}}
+        <form class="new-answer">
+          <input type="text" name="content" placeholder="Type to add new answer" />
+          <input type="submit" value="Send"/>
+        </form>
+      {{/if}}
     </header>
   </div>
 
@@ -24,6 +25,8 @@
 <template name="answer">
   <li>
     <p class="content">{{content}}</p>
-    <button class="delete">&times;</button>
+    {{#if hasAccess}}
+      <button class="delete">&times;</button>
+    {{/if}}
   </li>
 </template>

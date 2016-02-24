@@ -13,6 +13,8 @@
 			<h1 class="content">{{title}}</h1>
 		</a>
 		<p class="content">{{content}}</p>
-		<button class="delete">&times;</button>
+		{{#if hasAccess}}
+			<button class="delete">&times;</button>
+		{{/if}}
 	</li>
 </template>

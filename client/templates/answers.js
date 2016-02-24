@@ -10,14 +10,22 @@ Template.answers.helpers({
 Template.answers.events({
 	"submit form": function (event) {
 		event.preventDefault();
-		Answers.insert( {
-			'createdBy': Meteor.userId(),
-			'createdAt': new Date(),
-			'content': $('[name=content]').val(),
-			questionId: this._id
-		});
-		$('[name=title]').val('');
-		$('[name=content]').val('');	
+		if (Meteor.userId()) {
+			Answers.insert( {
+				'createdBy': Meteor.userId(),
+				'createdAt': new Date(),
+				'content': $('[name=content]').val(),
+				questionId: this._id
+			});
+			$('[name=title]').val('');
+			$('[name=content]').val('');	
+		}
+	}
+});
+
+Template.answer.helpers({
+	hasAccess: function () {
+		return this.createdBy && this.createdBy === Meteor.userId();
 	}
 });
 
@@ -26,4 +34,3 @@ Template.answer.events({
 	  Answers.remove(this._id);
 	}
 });
-
