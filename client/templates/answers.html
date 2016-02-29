@@ -1,11 +1,10 @@
 <template name="answers">
   <div class="container">
     <header>
-      <h1>Answers Question : </h1>
       <h2>{{ title }} </h2>
       <p>{{ content }} </p>
 
-      <ul>
+      <ul class="list-group">
         {{#each Answers}}
           {{> answer}}
         {{/each}}
@@ -13,8 +12,13 @@
 
       {{#if currentUser}}
         <form class="new-answer">
-          <input type="text" name="content" placeholder="Type to add new answer" />
-          <input type="submit" value="Send"/>
+        <h2>Type to add new answer</h2>
+        <div class="input-group">
+            <textarea name="content" placeholder="" class="form-control custom-control" rows="3" style="resize:none"></textarea>     
+            <input type="submit" class="btn btn-primary" value="Add">
+        </div>
+
+          
         </form>
       {{/if}}
     </header>
@@ -23,10 +27,12 @@
 </template>
 
 <template name="answer">
-  <li>
+  <li class="list-group-item">
     <p class="content">{{content}}</p>
     {{#if hasAccess}}
-      <button class="delete">&times;</button>
+      <span class="pull-right">
+        <button class="delete">&times;</button>
+      </span>
     {{/if}}
   </li>
 </template>

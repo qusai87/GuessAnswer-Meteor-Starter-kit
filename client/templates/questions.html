@@ -1,14 +1,21 @@
 <template name="questions">
 	<h1>Questions</h1>
-	<ul>
-      {{#each questions}}
-        {{> question}}
-      {{/each}}
-    </ul>
+	<table class="table">
+		<thead>
+	      <tr>
+	        <th>My Questions :</th>
+	      </tr>
+	    </thead>
+	    <tbody>
+			{{#each questions}}
+				{{> question}}
+			{{/each}}
+		</tbody>
+    </table>
 </template>
 
 <template name="question">
-	<li>
+	<tr>
 		<a href="{{pathFor 'answers'}}">
 			<h1 class="content">{{title}}</h1>
 		</a>
@@ -16,5 +23,5 @@
 		{{#if hasAccess}}
 			<button class="delete">&times;</button>
 		{{/if}}
-	</li>
+	</tr>
 </template>

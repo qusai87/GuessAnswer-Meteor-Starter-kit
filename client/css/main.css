@@ -1,0 +1,19 @@
+.form-login, .form-register {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+.form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.table {
+	 max-width: 630px;
+}

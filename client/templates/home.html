@@ -11,12 +11,18 @@
 		<p>please login to start the game!</p>
 		<hr>
 	{{/if}}
-	<p>Recent Questions : </p>
-	<ul>
-      {{#each public_questions}}
-        {{> question}}
-      {{/each}}
-    </ul>
+	<table class="table">
+		<thead>
+	      <tr>
+	        <th>Recent Questions :</th>
+	      </tr>
+	    </thead>
+	    <tbody>
+			{{#each public_questions}}
+				{{> question}}
+			{{/each}}
+		</tbody>
+    </table>
 
   </div> 
 </template>
