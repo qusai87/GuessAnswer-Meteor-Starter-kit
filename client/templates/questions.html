@@ -1,6 +1,6 @@
 <template name="questions">
 	<h1>Questions</h1>
-	<table class="table">
+	<table class="table table-bordered">
 		<thead>
 	      <tr>
 	        <th>My Questions :</th>
@@ -9,6 +9,10 @@
 	    <tbody>
 			{{#each questions}}
 				{{> question}}
+			{{else}}
+				<tr>
+					<td>No Questions Found, please add new question. <a href="{{pathFor route='ask'}}">Ask New Question</a></td>
+				</tr>
 			{{/each}}
 		</tbody>
     </table>
@@ -16,12 +20,18 @@
 
 <template name="question">
 	<tr>
-		<a href="{{pathFor 'answers'}}">
-			<h1 class="content">{{title}}</h1>
-		</a>
-		<p class="content">{{content}}</p>
-		{{#if hasAccess}}
-			<button class="delete">&times;</button>
-		{{/if}}
+		<td>
+			<a href="{{pathFor 'answers'}}">
+				<span class="content">{{title}}</span>
+			</a>
+			<span class="content">{{content}}</span>
+			{{#if hasAccess}}
+				<span class="pull-right">
+			        <button class="delete btn btn-xs btn-warning">
+			          <span class="glyphicon glyphicon-trash"></span>
+			        </button>
+			    </span>
+			{{/if}}
+		</td>
 	</tr>
 </template>

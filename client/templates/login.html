@@ -1,16 +1,33 @@
 <template name="login">
-    <form class="form-login">
-    	<h2>Login</h2>
-    	<label for="inputEmail" class="sr-only">Email: </label>
-        <input type="email" name="email" id="inputEmail" placeholder="Email address" class="form-control" required autofocus>
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" name="password" placeholder="Password" class="form-control" required>
+    <form class="form-horizontal form-login">
+    	<h2>Login: </h2>
+    	<div class="form-group">
+	    	<label for="inputEmail" class="control-label col-xs-2">Email: </label>
+	    	<div class="col-xs-10">
+	        	<input type="email" name="email" id="inputEmail" placeholder="Email address" class="form-control" required autofocus>
+	       	</div>
+	    </div>
+        
+		<div class="form-group">
+	        <label for="inputPassword" class="control-label col-xs-2">Password</label>
+	        <div class="col-xs-10">
+	        	<input type="password" id="inputPassword" name="password" placeholder="Password" class="form-control" required>
+	        </div>
+		</div>
+		
+		<div class="form-group">
+	        <div class="col-xs-offset-2 col-xs-10">
+	            <div class="checkbox">
+	                <label><input type="checkbox"> Remember me</label>
+	            </div>
+	        </div>
+	    </div>
 
         <input type="submit" value="Login" class="form-control btn btn-primary">
     
-	    <div class="login-help">
-			<a href="{{pathFor route='register'}}">Register</a> - <a href="{{pathFor route='forget'}}">Forgot Password</a>
-		</div>
+	    <p>
+	    	<a href="{{pathFor route='register'}}">Register</a> - <a href="{{pathFor route='forget'}}">Forgot Password</a>
+		</p>
 
 	</form>
 

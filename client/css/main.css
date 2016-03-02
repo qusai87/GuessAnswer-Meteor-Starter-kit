@@ -1,7 +1,10 @@
 .form-login, .form-register {
-  max-width: 330px;
+  margin: 10% auto;
+}
+
+.form-horizontal {
+  max-width: 430px;
   padding: 15px;
-  margin: 0 auto;
 }
 
 .form-control {
@@ -14,6 +17,7 @@
   font-size: 16px;
 }
 
-.table {
-	 max-width: 630px;
+
+.list-group {
+	max-width:  300px;
 }

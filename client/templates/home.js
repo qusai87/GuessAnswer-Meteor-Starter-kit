@@ -5,4 +5,3 @@ Template.home.helpers({
 	  return Questions.find();
 	}
 });
-

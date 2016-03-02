@@ -4,6 +4,9 @@ Template.answers.helpers({
 	Answers: function (questionId) {
 	  // Show newest tasks at the top
 	  return Answers.find({questionId: this._id});
+	},
+	hasAccess: function () {
+		return this.createdBy && this.createdBy === Meteor.userId();
 	}
 });
 
@@ -20,6 +23,10 @@ Template.answers.events({
 			$('[name=title]').val('');
 			$('[name=content]').val('');	
 		}
+	},
+	"click .delete": function () {
+	  Questions.remove(this._id);
+	  Router.go("/");
 	}
 });
 

@@ -2,10 +2,22 @@
   <div class="container">
     <header>
       <h1>Ask New Question: </h1>
-      <form class="new-question">
-        <input type="title" name="title" placeholder="Type to add new question title" />
-        <input type="text" name="content" placeholder="Type to add new question content" />
-        <input type="submit" value="Send"/>
+      <form class="form-horizontal new-question">
+        
+        <div class="form-group col-xs-12">
+          <label for="titleQuestion">title : </label>
+          <input type="text" name="title" class="form-control" placeholder="Type to add new title" id="titleQuestion" />
+        </div>
+
+        
+        <div class="form-group col-xs-12">
+          <label for="contentQuestion">Content : </label>
+          <input type="text" name="title" class="form-control" placeholder="Type to add new content" id="contentQuestion" />
+        </div>
+
+        <div class="form-group col-xs-12">
+          <input type="submit" value="Add" class="form-control btn btn-default" />
+        </div>
       </form>
     </header>
   </div> 

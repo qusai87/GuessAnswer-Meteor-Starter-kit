@@ -1,10 +1,20 @@
 <template name="register">
-    <form class="form-register">
-    	<h2>Register</h2>
-        <label for="inputEmail" class="sr-only">Email: </label>
-        <input type="email" id="inputEmail"  name="email" class="form-control">
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" name="password" class="form-control">
+    <form class="form-horizontal form-register">
+    	<h2>Register: </h2>
+
+    	<div class="form-group">
+	        <label for="inputEmail" class="control-label col-xs-2">Email: </label>
+	        <div class="col-xs-10">
+	        	<input type="email" id="inputEmail"  name="email" class="form-control">
+	        </div>
+        </div>
+
+        <div class="form-group">
+	        <label for="inputPassword" class="control-label col-xs-2">Password</label>
+	        <div class="col-xs-10">
+	        	<input type="password" id="inputPassword" name="password" class="form-control">
+	        </div>
+	    </div>
         <input type="submit"  value="Register" class="form-control btn btn-primary">
     </form>
 </template>
