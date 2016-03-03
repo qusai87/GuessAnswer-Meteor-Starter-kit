@@ -1,3 +1,20 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body>footer {
+    font-size: 11px;
+    background-color: #eee;
+    position: fixed;
+    bottom: 0;
+    padding: 8px;
+    width: 100%;
+    height: auto;
+    display: block;
+    text-align: center;
+}
+
 .form-login, .form-register {
   margin: 10% auto;
 }
@@ -19,5 +36,9 @@
 
 
 .list-group {
-	max-width:  300px;
+	max-width:  90%;
+}
+
+.owner {
+  color : #A5A5A5;
 }

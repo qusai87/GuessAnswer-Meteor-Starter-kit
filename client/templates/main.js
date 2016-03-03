@@ -2,7 +2,7 @@ Template.main.events({
     'click .logout': function(event){
         event.preventDefault();
         Meteor.logout();
-        Router.go('login');
+        Router.go('/');
     },
     'click .admin': function(event){
         event.preventDefault();

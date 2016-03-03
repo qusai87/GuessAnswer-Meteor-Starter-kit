@@ -11,27 +11,34 @@
 				{{> question}}
 			{{else}}
 				<tr>
-					<td>No Questions Found, please add new question. <a href="{{pathFor route='ask'}}">Ask New Question</a></td>
+					<td>No Questions Found</td>
 				</tr>
 			{{/each}}
 		</tbody>
     </table>
+
+		<p>please add new question. <a href="{{pathFor route='ask'}}">Ask New Question</a></p>
 </template>
 
 <template name="question">
 	<tr>
 		<td>
 			<a href="{{pathFor 'answers'}}">
+				
 				<span class="content">{{title}}</span>
+				<span class="content">{{content}}</span>
 			</a>
-			<span class="content">{{content}}</span>
-			{{#if hasAccess}}
+			
 				<span class="pull-right">
+					 <span class="owner">{{createdByFromatted createdBy}}</span>
+					{{#if hasAccess}}
 			        <button class="delete btn btn-xs btn-warning">
-			          <span class="glyphicon glyphicon-trash"></span>
+			        	
+			          	<span class="glyphicon glyphicon-trash"></span>
 			        </button>
+			        {{/if}}
 			    </span>
-			{{/if}}
+			
 		</td>
 	</tr>
 </template>

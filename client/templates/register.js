@@ -13,6 +13,5 @@ Template.register.events({
 		        Router.go("home"); // Redirect user if registration succeeds
 		    }
 		});
-        Router.go('home');
     }
 });

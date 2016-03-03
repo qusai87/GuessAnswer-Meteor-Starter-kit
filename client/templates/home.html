@@ -1,15 +1,16 @@
 <template name="home">
   <div class="container">
     <header>
-      <h1>Welcome To Ask And Answers DashBoard!</h1>
+      <h1>Ask And Answer!</h1>
     </header>
 	{{#if currentUser}}
-	    <ul>
-		    <li><a href="{{pathFor route='ask'}}">Ask New Question</a></li>
-		</ul>
+	    <p>Welcome Back {{ user_name }}!</p>
+		please <a href="{{pathFor route='ask'}}">Ask New Question </a>  or Answer the below!.
+		
 	{{else}}
-		<hr>
 	{{/if}}
+	<hr>
+
 	<table class="table">
 		<thead>
 	      <tr>
@@ -21,7 +22,11 @@
 				{{> question}}
 			{{else}}
 				<tr>
-					<td>No Questions Found, please add new question. <a href="{{pathFor route='ask'}}">Ask New Question</a></td>
+					<td>No Questions Found
+					{{#if currentUser}}
+						<span>, please <a href="{{pathFor route='ask'}}">Ask New Question</a> </span>
+					{{/if}}
+					</td>
 				</tr>
 			{{/each}}
 		</tbody>
