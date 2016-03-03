@@ -3,20 +3,20 @@
     <header>
       
       <div class="row">
-        <h2>{{ title }} </h2>
-        <p>{{ content }} </p>
+        <div class="col-xs-12">
+          <h2>{{ title }} </h2>
+          <p>{{ content }} </p>
 
-        <span class="clearfix pull-right">
-          <button class="delete btn btn-xs btn-warning">
-            <span class="glyphicon glyphicon-trash"></span>
-          </button>
-        </span>
-
+         {{#if hasAccess}}
+            <span class="clearfix pull-right">
+              <button class="delete btn btn-xs btn-warning">
+                <span class="glyphicon glyphicon-trash"></span>
+              </button>
+            </span>
+          {{/if}}
+          <hr>
+        </div> 
       </div>
-       
-      {{#if hasAccess}}
-        
-      {{/if}}
 
       <ul class="list-group">
         {{#each Answers}}

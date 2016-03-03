@@ -19,6 +19,8 @@ Template.answers.events({
 				'createdAt': new Date(),
 				'content': $('[name=content]').val(),
 				questionId: this._id
+			}, function (err) {
+				debugger;
 			});
 			$('[name=title]').val('');
 			$('[name=content]').val('');	

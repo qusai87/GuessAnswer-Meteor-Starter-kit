@@ -7,6 +7,8 @@ Template.ask.events({
 				'createdAt': new Date(),
 				'title': $('[name=title]').val(),
 				'content':  $('[name=content]').val()
+			}, function (err) {
+				debugger;
 			});
 			$('[name=title]').val('');
 			$('[name=content]').val('');

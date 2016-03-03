@@ -21,6 +21,7 @@
 	      {{/if}}
 	      <ul class="nav navbar-nav navbar-right">
 	      	{{#if currentUser}}
+	        <li><a href="#" class="admin">Admin</a></li>
 	        <li><a href="#" class="logout">Logout</a></li>
 	        {{else}}
 		    <li><a href="{{pathFor route='register'}}">Register</a></li>
