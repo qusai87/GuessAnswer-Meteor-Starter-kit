@@ -1,12 +1,10 @@
 <template name="home">
   <div class="container">
     <header>
-      <h1>Ask And Answer!</h1>
+      <h1>{{_ "app"}}</h1>
     </header>
 	{{#if currentUser}}
-	    <p>Welcome Back {{ user_name }}!</p>
-		please <a href="{{pathFor route='ask'}}">Ask New Question </a>  or Answer the below!.
-		
+		<a href="{{pathFor route='ask'}}">{{_ "ask_question"}}</a>.
 	{{else}}
 	{{/if}}
 	<hr>
@@ -14,7 +12,7 @@
 	<table class="table">
 		<thead>
 	      <tr>
-	        <th>Recent Questions :</th>
+	        <th>{{_ "recent_questions"}}</th>
 	      </tr>
 	    </thead>
 	    <tbody>

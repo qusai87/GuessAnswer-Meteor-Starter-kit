@@ -15,6 +15,10 @@ body>footer {
     text-align: center;
 }
 
+body {
+  padding-bottom: 50px;
+}
+
 .form-login, .form-register {
   margin: 10% auto;
 }

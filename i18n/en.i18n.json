@@ -1,0 +1,54 @@
+{
+
+	/*Config*/
+	"app": "Guess ANSWER!",
+	
+	 /*Navbar*/
+	"admin": "Admin",
+	"profile": "Profile",
+	"account": "Account",
+	"signout": "Sign out",
+	"signup": "Sign up",
+	"login": "Log in",
+	"login2": "Login",
+	"edit_profile": "Edit Profile",
+
+	/*Not Found*/
+	"not_found": "Nothing here.",
+
+
+	/*Home*/
+	/*Dashboard*/
+	"recent_questions" : "Recent Questions :",
+	"my_questions" : "My Questions:",
+	"no_questions" : "No Questions Found",
+	"ask_question": "Ask a Question!",
+	"add_question": "Add New Question: ",
+	"add_question_btn": "Add Question",
+	"delete": "Delete",
+
+	/*Answers*/
+	"answers" : "Answers:",
+	"no_answers" : "No Answers yet!",
+	"add_answer_title" : "Add New Answer:",
+	"add_answer_btn" : "Add Anwser",
+	/*Account*/
+	"account_details": "Account Details",
+	"delete_account": "Delete Account",
+	"delete_account_warn": "There's no coming back from this one",
+	"delete_account_warn2": "Are you sure you want to delete your account?",
+	"close": "Close",
+	"change_pswd": "Change Password",
+
+	/*Profile*/
+	"update": "Update",
+
+	/*Posts*/
+
+	"postTitle": "Title",
+	"postContent": "Content",
+	"postPicture": "Picture",
+	// "uploadLabel": "Choose File"
+	"profilePicture": "Profile Picture"
+
+}

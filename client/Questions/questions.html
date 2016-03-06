@@ -1,9 +1,9 @@
 <template name="questions">
-	<h1>Questions</h1>
+	<h4>Questions</h4>
 	<table class="table table-bordered">
 		<thead>
 	      <tr>
-	        <th>My Questions :</th>
+	        <th>{{_ "my_questions"}}</th>
 	      </tr>
 	    </thead>
 	    <tbody>
@@ -11,13 +11,13 @@
 				{{> question}}
 			{{else}}
 				<tr>
-					<td>No Questions Found</td>
+					<td>{{_ "no_questions"}}</td>
 				</tr>
 			{{/each}}
 		</tbody>
     </table>
 
-		<p>please add new question. <a href="{{pathFor route='ask'}}">Ask New Question</a></p>
+	<p><a href="{{pathFor route='ask'}}">{{_ "ask_question"}}</a></p>
 </template>
 
 <template name="question">
@@ -26,7 +26,6 @@
 			<a href="{{pathFor 'answers'}}">
 				
 				<span class="content">{{title}}</span>
-				<span class="content">{{content}}</span>
 			</a>
 			
 				<span class="pull-right">

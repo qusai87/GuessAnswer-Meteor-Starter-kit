@@ -8,7 +8,8 @@ Template.register.events({
             password: password
         }, function(error){
 		    if(error){
-		    	alert(console.log(error.reason) || error.reason); // Output error if registration fails
+                console.log(error.reason);
+		    	sAlert.error(error.reason); // Output error if registration fails
 		    } else {
 		        Router.go("home"); // Redirect user if registration succeeds
 		    }

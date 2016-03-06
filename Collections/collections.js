@@ -1,23 +1,19 @@
+'user strict';
+
 Questions = new Mongo.Collection("questions");
 Answers = new Mongo.Collection('answers');
 
-
-Schemas = {};
+if (typeof Schemas !== 'object') {
+  Schemas = {};
+}
 
 
 Schemas.Questions = new SimpleSchema({
   'title': {
     type: String,
     label: "Title",
-    max: 60
-  },
-  'content': {
-    type: String,
-    optional: true,
-    label: "Content",
-    autoform: {
-      rows: 5
-    }
+    max: 60,
+    min: 10
   },
   'createdAt': {
     type: Date,
@@ -37,7 +33,7 @@ Schemas.Questions = new SimpleSchema({
         return Meteor.userId();
       }
     },
-    autoform: {
+    'autoform': {
       options: function () {
         _.map(Meteor.users.find().fetch(), function (user) {
           return {
@@ -50,17 +46,25 @@ Schemas.Questions = new SimpleSchema({
   }
 });
 
+Questions.allow({
+   'insert': function () {
+      // add custom authentication code here
+     return true;
+      }
+ });
+
 Questions.attachSchema(Schemas.Questions);
 
 Schemas.Answers = new SimpleSchema({
-  content: {
+  'content': {
     type: String,
     label: "Content",
+    max: 10,
     autoform: {
       rows: 5
     }
   },
-  createdAt: {
+  'createdAt': {
     type: Date,
     label: 'Date',
     autoValue: function () {
@@ -69,7 +73,7 @@ Schemas.Answers = new SimpleSchema({
       }
     }
   },
-  createdBy: {
+  'createdBy': {
     type: String,
     label: "Owner",
     regEx: SimpleSchema.RegEx.Id,
@@ -89,39 +93,19 @@ Schemas.Answers = new SimpleSchema({
       }
     }
   },
-  questionId : {
+  'questionId' : {
   	type: String,
     label: "Question ID",
     regEx: SimpleSchema.RegEx.Id
   }
 });
 
-Answers.attachSchema(Schemas.Answers);
 
-AdminConfig = {
-	adminEmails: ['qusaitabbal@gmail.com'],
-	collections: {
-		Questions: {
-			icon: 'comment',
-			omitFields: ['createdAt'],
-			tableColumns: [
-			   { label: 'Title', name: 'title' },
-			   { label: 'Content', name: 'content' },
-			 ],
-			showEditColumn: true, // Set to false to hide the edit button. True by default.
-			showDelColumn: true, // Set to false to hide the edit button. True by default.
-			showWidget: false,
-			color: 'blue'
-		},
-		Answers : {
-			omitFields: ['createdAt'],
-			tableColumns: [
-			   { label: 'Content', name: 'content' }
-			 ],
-			showEditColumn: true, // Set to false to hide the edit button. True by default.
-			showDelColumn: true, // Set to false to hide the edit button. True by default.
-			showWidget: false,
-			color: 'red'
-		}
-	}
-};
+Answers.allow({
+   'insert': function () {
+      // add custom authentication code here
+     return true;
+      }
+ });
+
+Answers.attachSchema(Schemas.Answers);

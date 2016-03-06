@@ -1,0 +1,16 @@
+<template name="ask">
+    <header>
+      <h4>{{_ "add_question"}}</h4>
+    </header>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        {{#autoForm id="add" collection="Questions" type="insert"}}
+          {{> afQuickField name="title"}}
+          <button type="submit" class="btn btn-primary">{{_ "add_question_btn"}}</button>
+        {{/autoForm}}
+      </div>
+    </div>
+
+</template>
+
+
