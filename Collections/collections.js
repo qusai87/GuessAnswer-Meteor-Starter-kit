@@ -8,7 +8,8 @@ if (typeof Schemas !== 'object') {
 }
 
 SimpleSchema.messages({  
-  "tooSimple": "Title has few words!"
+  "tooSimple": "Question has few words!",
+  "tooComplex": "Answer has many words!"
 });
 Schemas.Questions = new SimpleSchema({
   'title': {
@@ -69,13 +70,14 @@ Schemas.Answers = new SimpleSchema({
   'content': {
     type: String,
     label: "Content",
-    max: 10,
+    max: 20,
+    min: 4,
     autoform: {
-      rows: 5
+      rows: 2
     },
     custom: function () {
-      if (this.value.split(' ').length<3) {
-        return "tooSimple";
+      if (this.value.split(' ').length>3) {
+        return "tooComplex";
       }
     }
   },
