@@ -20,6 +20,29 @@
 	<p><a href="{{pathFor route='ask'}}">{{_ "ask_question"}}</a></p>
 </template>
 
+<template name="publicQuestions">
+	<table class="table">
+		<thead>
+	      <tr>
+	        <th>{{_ "recent_questions"}}</th>
+	      </tr>
+	    </thead>
+	    <tbody>
+			{{#each public_questions}}
+				{{> question}}
+			{{else}}
+				<tr>
+					<td>No Questions Found
+					{{#if currentUser}}
+						<span>, please <a href="{{pathFor route='ask'}}">Ask New Question</a> </span>
+					{{/if}}
+					</td>
+				</tr>
+			{{/each}}
+		</tbody>
+    </table>
+</template>
+
 <template name="question">
 	<tr>
 		<td>

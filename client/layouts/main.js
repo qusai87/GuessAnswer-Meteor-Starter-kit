@@ -1,4 +1,4 @@
-Template.main.events({
+Template.navbar.events({
     'click .logout': function(event){
         event.preventDefault();
         Meteor.logout();
@@ -10,7 +10,7 @@ Template.main.events({
     }
 });
 
-Template.main.helpers({
+Template.navbar.helpers({
 	user_name : function() {
 		return Meteor.userId() && Meteor.user() && Meteor.user().profile ? Meteor.user().profile.name :  Meteor.user().emails[0].address;
 	}

@@ -7,13 +7,23 @@ if (typeof Schemas !== 'object') {
   Schemas = {};
 }
 
-
+SimpleSchema.messages({  
+  "tooSimple": "Title has few words!"
+});
 Schemas.Questions = new SimpleSchema({
   'title': {
     type: String,
     label: "Title",
     max: 60,
-    min: 10
+    min: 10,
+    autoform: {
+      rows: 3
+    },
+    custom: function () {
+      if (this.value.split(' ').length<3) {
+        return "tooSimple";
+      }
+    }
   },
   'createdAt': {
     type: Date,
@@ -62,6 +72,11 @@ Schemas.Answers = new SimpleSchema({
     max: 10,
     autoform: {
       rows: 5
+    },
+    custom: function () {
+      if (this.value.split(' ').length<3) {
+        return "tooSimple";
+      }
     }
   },
   'createdAt': {

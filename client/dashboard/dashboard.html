@@ -1,14 +1,18 @@
 <template name="dashboard">
-	<div class="template-dashboard">
-		<div class="row">
-			<div class="col-md-3">
-				{{> ask}}
-			</div>
-			<div class="col-md-9">
-				{{> questions}}
+	{{#if Template.subscriptionsReady}}
+		<div class="template-dashboard">
+			<div class="row">
+				<div class="col-md-3">
+					{{> ask}}
+				</div>
+				<div class="col-md-9">
+					{{> publicQuestions}}
+				</div>
 			</div>
 		</div>
-	</div>
+	{{else}}
+		{{> loader}}
+  	{{/if}}
 </template>
 <!-- 
 <template name="posts">

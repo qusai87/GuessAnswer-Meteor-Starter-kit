@@ -1,6 +1,4 @@
 // This code only runs on the client
-Meteor.subscribe("questions");
-
 Template.questions.helpers({
 	questions: function () {
 	  // Show newest tasks at the top
@@ -30,3 +28,9 @@ Template.question.events({
 	}
 });
 
+Template.publicQuestions.helpers({
+	public_questions: function () {
+		// Show newest tasks at the top
+		return Questions.find();
+	}
+});

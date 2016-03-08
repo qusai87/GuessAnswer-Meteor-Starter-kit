@@ -1,34 +1,19 @@
 <template name="home">
-  <div class="container">
-    <header>
-      <h1>{{_ "app"}}</h1>
-    </header>
-	{{#if currentUser}}
-		<a href="{{pathFor route='ask'}}">{{_ "ask_question"}}</a>.
-	{{else}}
-	{{/if}}
-	<hr>
-
-	<table class="table">
-		<thead>
-	      <tr>
-	        <th>{{_ "recent_questions"}}</th>
-	      </tr>
-	    </thead>
-	    <tbody>
-			{{#each public_questions}}
-				{{> question}}
+	{{#if Template.subscriptionsReady}}
+		<div class="">
+		    <header>
+		      <h1>{{_ "app"}}</h1>
+		    </header>
+			{{#if currentUser}}
+				<a href="{{pathFor route='ask'}}">{{_ "ask_question"}}</a>.
 			{{else}}
-				<tr>
-					<td>No Questions Found
-					{{#if currentUser}}
-						<span>, please <a href="{{pathFor route='ask'}}">Ask New Question</a> </span>
-					{{/if}}
-					</td>
-				</tr>
-			{{/each}}
-		</tbody>
-    </table>
-  </div> 
+			{{/if}}
+			<hr>
+			
+			{{> publicQuestions}}
+		</div>
+	{{else}}
+		{{> loader}}
+	{{/if}}
 
 </template>
