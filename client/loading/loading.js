@@ -1,5 +1,6 @@
 Template.loading.rendered = function () {
   if ( ! Session.get('loadingSplash') ) {
+    Session.set('loadingSplash',true);
     this.loading = window.pleaseWait({
       logo: '/images/logo.png',
       backgroundColor: '#ffffff',
